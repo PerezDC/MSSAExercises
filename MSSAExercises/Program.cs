@@ -56,8 +56,8 @@ namespace MathGames
                 Console.WriteLine($"\nProblem type: Division | Number of questions: {practiceAmount}.");
                 ProblemSets.DivisionQuestions(practiceAmount);
             }
-
-            Console.WriteLine($"Your score was {ProblemSets.Score} / {practiceAmount}. You got");
+            
+            Console.WriteLine($"\nYour score was {ProblemSets.Score} / {practiceAmount}: %{Math.Round(((double)ProblemSets.Score / (double)practiceAmount) * 100)}!");
         }
     }
 }

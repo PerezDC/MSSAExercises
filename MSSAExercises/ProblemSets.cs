@@ -14,15 +14,15 @@ namespace MathGames
 
         struct Flashcards
         {
-            public int num1;
-            public int num2;
+            public double num1;
+            public double num2;
         }
 
         static Flashcards[] GetQuestions(int size, bool division = false)
         {
             Flashcards[] questionSet = new Flashcards[size];
 
-            if (division == true)
+            if (division == true) // Division questions will not contain 0s.
             {
                 for (int i = 0; i < size; i++)
                 {
@@ -46,7 +46,6 @@ namespace MathGames
 
                 }
             }
-
             return questionSet;
         }
 
@@ -119,20 +118,20 @@ namespace MathGames
 
         public static void DivisionQuestions(int numQuestions)
         {
-            Flashcards[] DivisionSet = GetQuestions(numQuestions, true);
+            Flashcards[] DivSet = GetQuestions(numQuestions, true);
 
-            for (int i = 0; i < DivisionSet.Length; i++)
+            for (int i = 0; i < DivSet.Length; i++)
             {
-                Console.Write($"\nQuestion {i + 1}. \n{DivisionSet[i].num1} / {DivisionSet[i].num2} = ");
+                Console.Write($"\nQuestion {i + 1}. \n{DivSet[i].num1} / {DivSet[i].num2} = ");
                 double userAnswer = Convert.ToDouble(Console.ReadLine());
-                if (userAnswer == Convert.ToDouble(DivisionSet[i].num1 / DivisionSet[i].num2))
+                if (userAnswer == Math.Round((DivSet[i].num1 / DivSet[i].num2), 2))
                 {
                     Console.WriteLine("Correct.");
                     Score++;
                 }
                 else
                 {
-                    Console.WriteLine($"Incorrect. Correct answer is {DivisionSet[i].num1 / DivisionSet[i].num2}.");
+                    Console.WriteLine($"Incorrect. Correct answer is {Math.Round((DivSet[i].num1 / DivSet[i].num2),2)}.");
                 }
             }
         }
