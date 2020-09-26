@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30309.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathGames", "MSSAExercises\MathGames.csproj", "{897173C8-C66B-40CE-A470-1EC18CF3540D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathGames", "MSSAExercises\MathGames.csproj", "{897173C8-C66B-40CE-A470-1EC18CF3540D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PWEncryptAuth", "PWEncryptAuth\PWEncryptAuth.csproj", "{7097E775-909B-4769-9C59-97FB5E30300B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{897173C8-C66B-40CE-A470-1EC18CF3540D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{897173C8-C66B-40CE-A470-1EC18CF3540D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{897173C8-C66B-40CE-A470-1EC18CF3540D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7097E775-909B-4769-9C59-97FB5E30300B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7097E775-909B-4769-9C59-97FB5E30300B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7097E775-909B-4769-9C59-97FB5E30300B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7097E775-909B-4769-9C59-97FB5E30300B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
