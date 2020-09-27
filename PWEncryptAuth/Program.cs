@@ -13,24 +13,37 @@ namespace PWEncryptAuth
                   - authenticate a specific username/password pair, or
                   - exit the application.
              */
-            Console.WriteLine("--------------------------------------------------------------------");
-            Console.WriteLine("\n\tPASSWORD AUTHENTICATION SYSTEM");
-            Console.WriteLine("\n\tPlease select one option: .");
-            Console.WriteLine("\t1. Establish an account ");
-            Console.WriteLine("\t2. Authenticate a user ");
-            Console.WriteLine("\t3. Exit the system");
-            Console.Write("\n\tEnter selection: ");
-            string userInput = Console.ReadLine();
-            Console.WriteLine("\n--------------------------------------------------------------------");
-            if (userInput == "1")
-            {
-                UserDetails.CreateNew();
+            string userInput = "intial";
 
-                foreach (var item in UserDetails.usersPasswords)
+            while (userInput != "3")
+            {
+                Console.WriteLine("--------------------------------------------------------------------");
+                Console.WriteLine("\n\tPASSWORD AUTHENTICATION SYSTEM");
+                Console.WriteLine("\n\tPlease select one option:");
+                Console.WriteLine("\t1. Establish an account");
+                Console.WriteLine("\t2. Authenticate a user");
+                Console.WriteLine("\t3. Exit the system");
+                Console.Write("\n\tEnter selection: ");
+                userInput = Console.ReadLine();
+                Console.WriteLine("\n--------------------------------------------------------------------");
+
+                if (userInput == "1")
                 {
-                    Console.WriteLine(item.Key + " " + item.Value);
+                    UserDetails.CreateNew();
                 }
+
+                else if (userInput == "2")
+                {
+                    UserDetails.AuthUser();
+                };
             }
+
+            Console.WriteLine("\n\tClosing the authentication system. Decrypting Passwords.");
+            foreach (var item in UserDetails.usersPasswords)
+            {
+                Console.WriteLine($"\tUsername: {item.Key} \tPassword: {UserDetails.DecryptPass(item.Value)}");
+            }
+
 
 
         }
