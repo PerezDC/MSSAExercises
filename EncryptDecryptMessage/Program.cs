@@ -39,8 +39,8 @@ namespace EncryptDecryptMessage
                     {
                         continue;
                     }
-                    if (plainText[i] <= 90 && plainText[i] + singleKey > 90 ||
-                        plainText[i] >= 97 && plainText[i] + singleKey > 122)
+                    if (plainText[i] < 91 && plainText[i] + singleKey > 90 ||
+                        plainText[i] > 96 && plainText[i] + singleKey > 122)
                     {
                         codedMessage += (char) (plainText[i] + singleKey - 26);
                         cleanPlainText += plainText[i];
@@ -64,7 +64,7 @@ namespace EncryptDecryptMessage
 
                     int singleKey = KeyIntValue(key[keyCounter]);
 
-                    if (plainText[i] <= 90 && plainText[i] - singleKey < 65 || plainText[i] >= 97 && plainText[i] - singleKey < 97)
+                    if (plainText[i] < 89 && plainText[i] - singleKey < 65 || plainText[i] > 96 && plainText[i] - singleKey < 97)
                     {
                         codedMessage += (char)(plainText[i] - singleKey + 26);
                     }
